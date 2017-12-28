@@ -57,10 +57,17 @@
     <Compile Include="ChangeFirstName.xaml.cs">
       <DependentUpon>ChangeFirstName.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ChangeSurname.xaml.cs">
+      <DependentUpon>ChangeSurname.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FlatButton.xaml.cs">
       <DependentUpon>FlatButton.xaml</DependentUpon>
     </Compile>
     <Page Include="ChangeFirstName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeSurname.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

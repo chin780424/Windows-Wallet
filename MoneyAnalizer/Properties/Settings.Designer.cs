@@ -142,5 +142,29 @@ namespace MoneyAnalizer.Properties {
                 this["AwatarID"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Edytuj")]
+        public string FirstName {
+            get {
+                return ((string)(this["FirstName"]));
+            }
+            set {
+                this["FirstName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Edytuj")]
+        public string Surname {
+            get {
+                return ((string)(this["Surname"]));
+            }
+            set {
+                this["Surname"] = value;
+            }
+        }
     }
 }

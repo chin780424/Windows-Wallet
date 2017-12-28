@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace MoneyAnalizer
 {
@@ -21,6 +22,8 @@ namespace MoneyAnalizer
     public partial class MainWindow : Window
     {
         int i = 0;
+
+        DispatcherTimer refresher = new DispatcherTimer();
 
         private void ChangeAwatar(int j)
         {
@@ -101,9 +104,13 @@ namespace MoneyAnalizer
             InitializeComponent();
             i = Properties.Settings.Default.AwatarID;
             ChangeAwatar(i);
+            lb_FirstName.Content = Properties.Settings.Default.FirstName;
+            lb_Surname.Content = Properties.Settings.Default.Surname;
 
-            ChangeFirstName window = new ChangeFirstName();
-            window.Show();
+            refresher.Interval = new TimeSpan(0, 0, 1);
+            refresher.Tick += new EventHandler(Timer_Tick);
+            refresher.Start();
+
         }
 
         int k = 0;
@@ -114,6 +121,26 @@ namespace MoneyAnalizer
             Properties.Settings.Default.AwatarID = k;
             Properties.Settings.Default.Save();
             if (k >= 13) k = 0;
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            i = Properties.Settings.Default.AwatarID;
+            ChangeAwatar(i);
+            lb_FirstName.Content = Properties.Settings.Default.FirstName;
+            lb_Surname.Content = Properties.Settings.Default.Surname;
+        }
+
+        private void Buton_FirstNameClick(object sender, MouseButtonEventArgs e)
+        {
+            ChangeFirstName window = new ChangeFirstName();
+            window.Show();
+        }
+
+        private void Button_SurnameClick(object sender, MouseButtonEventArgs e)
+        {
+            ChangeSurname window = new ChangeSurname();
+            window.Show();
         }
     }
 }

@@ -32,5 +32,11 @@
     <Setting Name="AwatarID" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
+    <Setting Name="FirstName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Edytuj</Value>
+    </Setting>
+    <Setting Name="Surname" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Edytuj</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

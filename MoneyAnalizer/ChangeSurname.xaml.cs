@@ -15,18 +15,18 @@ using System.Windows.Shapes;
 namespace MoneyAnalizer
 {
     /// <summary>
-    /// Logika interakcji dla klasy ChangeFirstName.xaml
+    /// Logika interakcji dla klasy ChangeSurname.xaml
     /// </summary>
-    public partial class ChangeFirstName : Window
+    public partial class ChangeSurname : Window
     {
-        public ChangeFirstName()
+        public ChangeSurname()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.FirstName = lb_firstname.Text;
+            Properties.Settings.Default.Surname = lb_surname.Text;
             Properties.Settings.Default.Save();
             this.Hide();
         }
