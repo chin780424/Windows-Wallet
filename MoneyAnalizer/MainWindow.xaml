@@ -5,13 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MoneyAnalizer"
         mc:Ignorable="d"
-        Title="LoopMoney" Height="500" Width="800">
+        Title="LoopMoney" Height="475" Width="800" ResizeMode="CanMinimize">
     <Grid Background="#FF22313F">
-        <Button Content="Dodaj wydatek" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#EF4836" Margin="15,0,0,15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="377.5" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}"/>
-        <Button Content="Dodaj przychód" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#2ECC71" Margin="15,0,0,139" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="378" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}"/>
+        <Button Content="Dodaj wydatek" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#EF4836" Margin="15,0,0,15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="377" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}"/>
+        <Button Content="Dodaj przychód" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#2ECC71" Margin="15,0,0,139" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="377" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}"/>
         <Button Content="Statystyki" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#8E44AD" Margin="397,0,0,139" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="378" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}"/>
         <Button Content="Historia przychodów" FontSize="19" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#59ABE3" Margin="397,0,0,15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="190" MinHeight="50" MinWidth="120" BorderBrush="{x:Null}"/>
         <Button Content="Historia wydatków" FontSize="19" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#F9BF3B" Margin="590,0,0,15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="185" MinHeight="50" MinWidth="120" BorderBrush="{x:Null}"/>
 
+        <Rectangle Fill="#95A5A6" Height="165" Margin="398,15,8,264" Width="377.5"/>
+        <Label Margin="405,20,14,266" FontSize="52" Foreground="#F2F1EF" Content="Saldo:13400zł"/>
+        <Label Margin="415,90,0,266" FontSize="25" Foreground="#ecf0f1">Łączne wydatki: 3681 zł</Label>
+        <Label Margin="415,127,0,266" FontSize="25" Foreground="#ecf0f1">Ostatni wydatek: 199 zł</Label>
+        <Grid Margin="50,35,379,276">
+            <Label Margin="130,15,25,65" FontSize="30" Foreground="#F2F1EF" Content="Paweł" Cursor="Hand"/>
+            <Image HorizontalAlignment="Left" Height="120" VerticalAlignment="Top" Width="120" Source="user.png"/>
+            <Label Margin="130,60,15,20" FontSize="30" Foreground="#F2F1EF" Content="Czernecki"/>
+        </Grid>
     </Grid>
 </Window>
