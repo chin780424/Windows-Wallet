@@ -18,9 +18,9 @@
         <Label Margin="415,90,0,266" FontSize="25" Foreground="#ecf0f1">Łączne wydatki: 3681 zł</Label>
         <Label Margin="415,127,0,266" FontSize="25" Foreground="#ecf0f1">Ostatni wydatek: 199 zł</Label>
         <Grid Margin="50,35,379,276">
-            <Label Margin="130,15,25,65" FontSize="30" Foreground="#F2F1EF" Content="Paweł" Cursor="Hand"/>
-            <Image HorizontalAlignment="Left" Height="120" VerticalAlignment="Top" Width="120" Source="user.png"/>
-            <Label Margin="130,60,15,20" FontSize="30" Foreground="#F2F1EF" Content="Czernecki"/>
+            <Label x:Name="lb_FirstName" Margin="130,15,25,65" FontSize="30" Foreground="#F2F1EF" Content="Paweł" Cursor="Hand"/>
+            <Image x:Name="img_avatar" HorizontalAlignment="Left" Height="120" VerticalAlignment="Top" Width="120" Source="icons/user_cook.png" Cursor="Hand" MouseUp="Image_MouseUp"/>
+            <Label Margin="130,60,15,20" FontSize="30" Foreground="#F2F1EF" Content="Czernecki" Cursor="Hand"/>
         </Grid>
     </Grid>
 </Window>

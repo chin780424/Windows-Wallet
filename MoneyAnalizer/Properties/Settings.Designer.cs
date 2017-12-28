@@ -130,5 +130,17 @@ namespace MoneyAnalizer.Properties {
                 this["maxRevenue"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int AwatarID {
+            get {
+                return ((int)(this["AwatarID"]));
+            }
+            set {
+                this["AwatarID"] = value;
+            }
+        }
     }
 }

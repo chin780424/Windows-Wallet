@@ -101,7 +101,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="user.png" />
+    <Resource Include="icons\user.png" />
+    <Resource Include="icons\user_accountant.png" />
+    <Resource Include="icons\user_cook.png" />
+    <Resource Include="icons\user_doctor.png" />
+    <Resource Include="icons\user_girl.png" />
+    <Resource Include="icons\user_girl2.png" />
+    <Resource Include="icons\user_grandpa.png" />
+    <Resource Include="icons\user_solider.png" />
+    <Resource Include="icons\user_thief.png" />
+    <Resource Include="icons\user_waiter.png" />
+    <Resource Include="icons\user_waiter2.png" />
+    <Resource Include="icons\user_women.png" />
+    <Resource Include="icons\user_women2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
