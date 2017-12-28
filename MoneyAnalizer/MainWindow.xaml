@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MoneyAnalizer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="LoopMoney" Height="500" Width="800">
+    <Grid Background="#FF22313F">
+        <Button Content="Dodaj wydatek" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#EF4836" Margin="15,0,0,15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="377.5" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}"/>
+        <Button Content="Dodaj przychód" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#2ECC71" Margin="15,0,0,139" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="378" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}"/>
+        <Button Content="Statystyki" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#8E44AD" Margin="397,0,0,139" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="378" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}"/>
+        <Button Content="Historia przychodów" FontSize="19" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#59ABE3" Margin="397,0,0,15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="190" MinHeight="50" MinWidth="120" BorderBrush="{x:Null}"/>
+        <Button Content="Historia wydatków" FontSize="19" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#F9BF3B" Margin="590,0,0,15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="185" MinHeight="50" MinWidth="120" BorderBrush="{x:Null}"/>
+
     </Grid>
 </Window>
