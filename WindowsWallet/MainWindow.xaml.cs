@@ -133,6 +133,18 @@ namespace MoneyAnalizer
             lb_lastRevenue.Content = "Ostatni wydatek: " + Properties.Settings.Default.lastRevenue + "zł";
             lb_sumRevenue.Content = "Łączne wydatki: " + Properties.Settings.Default.sumRevenue + "zł";
 
+            //STATY
+
+            lb_stats_cashFlow.Content = Properties.Settings.Default.cashFlow + "zł";
+            lb_stats_lastExpense.Content = Properties.Settings.Default.lastExpense + "zł";
+            lb_stats_lastRevenue.Content = Properties.Settings.Default.lastRevenue + "zł";
+            lb_stats_maxSaldo.Content = Properties.Settings.Default.maxSaldo + "zł";
+            lb_stats_saldo.Content = Properties.Settings.Default.saldo + "zł";
+            lb_stats_sumExpense.Content = Properties.Settings.Default.sumExpense + "zł";
+            lb_sum_sumRevenue.Content = Properties.Settings.Default.sumRevenue + "zł";
+
+
+
 
         }
 
