@@ -129,6 +129,11 @@ namespace MoneyAnalizer
             ChangeAwatar(i);
             lb_FirstName.Content = Properties.Settings.Default.FirstName;
             lb_Surname.Content = Properties.Settings.Default.Surname;
+            lb_saldo.Content = "Saldo: " + Properties.Settings.Default.saldo + "zł";
+            lb_lastRevenue.Content = "Ostatni wydatek: " + Properties.Settings.Default.lastRevenue + "zł";
+            lb_sumRevenue.Content = "Łączne wydatki: " + Properties.Settings.Default.sumRevenue + "zł";
+
+
         }
 
         private void Buton_FirstNameClick(object sender, MouseButtonEventArgs e)
@@ -168,6 +173,37 @@ namespace MoneyAnalizer
             Page_AddExpense.Visibility = Visibility.Hidden;
             Page_AddRevenue.Visibility = Visibility.Hidden;
             Page_Stats.Visibility = Visibility.Hidden;
+            Page_index.Visibility = Visibility.Visible;
+        }
+
+        //Dodawanie i inne operacje na pieniążkach
+
+        private void bt_addExpense(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.saldo += Convert.ToInt32(lb_ExpensePrice.Text);
+            Properties.Settings.Default.lastExpense = Convert.ToInt32(lb_ExpensePrice.Text);
+            Properties.Settings.Default.sumExpense += Convert.ToInt32(lb_ExpensePrice.Text);
+            Properties.Settings.Default.cashFlow += Convert.ToInt32(lb_ExpensePrice.Text);
+
+            if (Properties.Settings.Default.saldo > Properties.Settings.Default.maxSaldo)
+                Properties.Settings.Default.maxSaldo = Properties.Settings.Default.saldo;
+
+            Properties.Settings.Default.Save();
+
+            Page_AddExpense.Visibility = Visibility.Hidden;
+            Page_index.Visibility = Visibility.Visible;
+        }
+
+        private void bt_addRevenue(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.saldo -= Convert.ToInt32(lb_RevenuePrice.Text);
+            Properties.Settings.Default.lastRevenue = Convert.ToInt32(lb_RevenuePrice.Text);
+            Properties.Settings.Default.sumRevenue += Convert.ToInt32(lb_RevenuePrice.Text);
+            Properties.Settings.Default.cashFlow += Convert.ToInt32(lb_RevenuePrice.Text);
+
+            Properties.Settings.Default.Save();
+
+            Page_AddRevenue.Visibility = Visibility.Hidden;
             Page_index.Visibility = Visibility.Visible;
         }
     }

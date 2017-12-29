@@ -109,30 +109,6 @@ namespace MoneyAnalizer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int maxExpense {
-            get {
-                return ((int)(this["maxExpense"]));
-            }
-            set {
-                this["maxExpense"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int maxRevenue {
-            get {
-                return ((int)(this["maxRevenue"]));
-            }
-            set {
-                this["maxRevenue"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public int AwatarID {
             get {
@@ -145,7 +121,7 @@ namespace MoneyAnalizer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Edytuj")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Paweł")]
         public string FirstName {
             get {
                 return ((string)(this["FirstName"]));
@@ -157,7 +133,7 @@ namespace MoneyAnalizer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Edytuj")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Czernecki")]
         public string Surname {
             get {
                 return ((string)(this["Surname"]));

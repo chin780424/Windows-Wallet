@@ -23,20 +23,14 @@
     <Setting Name="cashFlow" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="maxExpense" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="maxRevenue" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
     <Setting Name="AwatarID" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="FirstName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Edytuj</Value>
+      <Value Profile="(Default)">Paweł</Value>
     </Setting>
     <Setting Name="Surname" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Edytuj</Value>
+      <Value Profile="(Default)">Czernecki</Value>
     </Setting>
   </Settings>
 </SettingsFile>
