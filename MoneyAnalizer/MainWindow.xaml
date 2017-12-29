@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="LoopMoney" Height="475" Width="800" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid Background="#FF22313F">
-        <Grid x:Name="Page_index" Visibility="Hidden">
+        <Grid x:Name="Page_index" Visibility="Visible">
             <Button Content="Dodaj wydatek" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#EF4836" Margin="15,0,0,15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="377" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}"/>
             <Button Content="Dodaj przychód" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#2ECC71" Margin="15,0,0,139" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="377" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}"/>
             <Button Content="Statystyki" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#8E44AD" Margin="397,0,0,139" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="378" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}"/>
@@ -25,14 +25,13 @@
             </Grid>
         </Grid>
 
-        <Grid x:Name="Page_AddExpense" Visibility="Visible">
+        <Grid x:Name="Page_AddExpense" Visibility="Hidden">
             <Button Content="Dodaj przychód" FontSize="45" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#00e640" Margin="305,0,0,36" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="470" BorderBrush="{x:Null}"/>
             <Label Margin="30,60,409,316" FontSize="42" Foreground="#F2F1EF" Content="Kwota przychodu" HorizontalAlignment="Center" Width="355"/>
             <Label Margin="405,60,34,316" FontSize="42" Foreground="#F2F1EF" Content="Tytuł przychodu" HorizontalAlignment="Center" Width="355"/>
-            <TextBox x:Name="lb_ExpensePrice" FontSize="48" Margin="30,135,404,226" FontFamily="Segoe UI" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="lb_ExpensePrice" FontSize="48" Margin="30,135,405,226" FontFamily="Segoe UI" HorizontalContentAlignment="Center"/>
             <TextBox x:Name="lb_ExpenseTitle" FontSize="28" Margin="405,133,30,226" FontFamily="Segoe UI" HorizontalContentAlignment="Center"/>
             <Button Content="Anuluj" FontSize="45" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#D91E18" Margin="30,0,0,36" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="260" BorderBrush="{x:Null}"/>
-            <Label Content="zł" Margin="325,140,419,231" FontSize="48" Background="White"/>
         </Grid>
 
         <Grid x:Name="Page_AddRevenue" Visibility="Hidden" >
@@ -42,6 +41,44 @@
             <TextBox x:Name="lb_RevenuePrice" FontSize="28" Margin="30,135,405,224" FontFamily="Segoe UI" HorizontalContentAlignment="Center"/>
             <TextBox x:Name="lb_RevenueTitle" FontSize="28" Margin="405,133,30,226" FontFamily="Segoe UI" HorizontalContentAlignment="Center"/>
             <Button Content="Anuluj" FontSize="45" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#D91E18" Margin="30,0,0,36" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="260" BorderBrush="{x:Null}"/>
+        </Grid>
+
+        <Grid x:Name="Page_Stats" Visibility="Hidden">
+            <Label Content="Twoje statystyki" Foreground="#ecf0f1" FontFamily="Segoe UI Bold" FontSize="60" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,25,-1,311" Width="795"/>
+            <StackPanel Background="#A0D468" Margin="15,140,389,180">
+                <Label Foreground="#ecf0f1" FontSize="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="80" FontFamily="Segoe UI Bold">1405zł</Label>
+                <Label Foreground="#ecf0f1" FontSize="20" FontFamily="Segoe UI Semibold" Height="40" Content="Saldo konta"/>
+            </StackPanel>
+            <StackPanel Background="#fc6e51" Margin="15,265,584,55">
+                <Label Foreground="#ecf0f1" FontSize="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="81" FontFamily="Segoe UI Bold" Content="230zł"/>
+                <Label Foreground="#ecf0f1" FontSize="20" FontFamily="Segoe UI Semibold" Height="35" Content="Ostatni przychód"/>
+            </StackPanel>
+            <StackPanel Background="#5D9CEC" Margin="210,265,389,55" Width="195">
+                <Label Foreground="#ecf0f1" FontSize="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="81" FontFamily="Segoe UI Bold" Content="499zł"/>
+                <Label Foreground="#ecf0f1" FontSize="20" FontFamily="Segoe UI Semibold" Height="35" Content="Ostatni wydatek"/>
+            </StackPanel>
+            <WrapPanel Background="#EC87C0" Margin="405,140,100,260">
+                <Label Content="3400zł" Foreground="#ecf0f1" Width="120px" Height="40" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" FontSize="20" FontFamily="Segoe UI Bold"></Label>
+                <Label FontSize="19" Foreground="#ecf0f1" >łączny przepływ konta</Label>
+            </WrapPanel>
+            <WrapPanel Background="#EC87C0" Margin="405,140,10,260">
+                <Label Content="3400zł" Foreground="#ecf0f1" Width="120px" Height="40" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" FontSize="20" FontFamily="Segoe UI Bold"/>
+                <Label FontSize="19" Foreground="#ecf0f1" Content="łączny przepływ konta" />
+            </WrapPanel>
+            <WrapPanel Background="#48CFAD" Margin="405,185,10,215">
+                <Label Content="2000zł" Foreground="#ecf0f1" Width="120px" Height="40" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" FontSize="20" FontFamily="Segoe UI Bold"/>
+                <Label FontSize="19" Foreground="#ecf0f1" Content="maksymalne saldo" />
+            </WrapPanel>
+            <WrapPanel Background="#F6BB42" Margin="405,230,10,170">
+                <Label Content="1342zł" Foreground="#ecf0f1" Width="120px" Height="40" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" FontSize="20" FontFamily="Segoe UI Bold"/>
+                <Label FontSize="19" Foreground="#ecf0f1" Content="łączne przychody" />
+            </WrapPanel>
+            <WrapPanel Background="#ac92ec" Margin="405,275,10,125">
+                <Label Content="442zł" Foreground="#ecf0f1" Width="120px" Height="40" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" FontSize="20" FontFamily="Segoe UI Bold"/>
+                <Label FontSize="19" Foreground="#ecf0f1" Content="łączne wydatki" />
+            </WrapPanel>
+            <Button Content="Powrót" FontSize="45" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#ED5565" Margin="405,320,10,55" BorderBrush="{x:Null}" />
+
         </Grid>
     </Grid>
 </Window>
