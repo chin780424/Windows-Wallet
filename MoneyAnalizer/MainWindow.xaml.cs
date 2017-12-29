@@ -142,5 +142,33 @@ namespace MoneyAnalizer
             ChangeSurname window = new ChangeSurname();
             window.Show();
         }
+
+
+        //Nawigacja
+        private void bt_addExpense_click(object sender, RoutedEventArgs e)
+        {
+            Page_index.Visibility = Visibility.Hidden;
+            Page_AddExpense.Visibility = Visibility.Visible;
+        }
+
+        private void bt_addRevenue_click(object sender, RoutedEventArgs e)
+        {
+            Page_index.Visibility = Visibility.Hidden;
+            Page_AddRevenue.Visibility = Visibility.Visible;
+        }
+
+        private void bt_stats_click(object sender, RoutedEventArgs e)
+        {
+            Page_index.Visibility = Visibility.Hidden;
+            Page_Stats.Visibility = Visibility.Visible;
+        }
+
+        private void bt_backToIndex_click(object sender, RoutedEventArgs e)
+        {
+            Page_AddExpense.Visibility = Visibility.Hidden;
+            Page_AddRevenue.Visibility = Visibility.Hidden;
+            Page_Stats.Visibility = Visibility.Hidden;
+            Page_index.Visibility = Visibility.Visible;
+        }
     }
 }

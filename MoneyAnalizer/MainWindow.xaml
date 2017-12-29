@@ -8,9 +8,9 @@
         Title="LoopMoney" Height="475" Width="800" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid Background="#FF22313F">
         <Grid x:Name="Page_index" Visibility="Visible">
-            <Button Content="Dodaj wydatek" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#EF4836" Margin="15,0,0,15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="377" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}"/>
-            <Button Content="Dodaj przychód" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#2ECC71" Margin="15,0,0,139" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="377" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}"/>
-            <Button Content="Statystyki" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#8E44AD" Margin="397,0,0,139" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="378" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}"/>
+            <Button Content="Dodaj wydatek" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#EF4836" Margin="15,0,0,15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="377" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}" Click="bt_addRevenue_click"/>
+            <Button Content="Dodaj przychód" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#2ECC71" Margin="15,0,0,139" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="377" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}" Click="bt_addExpense_click"/>
+            <Button Content="Statystyki" FontSize="30" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#8E44AD" Margin="397,0,0,139" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="378" MinHeight="50" MinWidth="240" BorderBrush="{x:Null}" Click="bt_stats_click"/>
             <Button Content="Historia przychodów" FontSize="19" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#59ABE3" Margin="397,0,0,15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="190" MinHeight="50" MinWidth="120" BorderBrush="{x:Null}"/>
             <Button Content="Historia wydatków" FontSize="19" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#F9BF3B" Margin="590,0,0,15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="185" MinHeight="50" MinWidth="120" BorderBrush="{x:Null}"/>
 
@@ -31,7 +31,7 @@
             <Label Margin="405,60,34,316" FontSize="42" Foreground="#F2F1EF" Content="Tytuł przychodu" HorizontalAlignment="Center" Width="355"/>
             <TextBox x:Name="lb_ExpensePrice" FontSize="48" Margin="30,135,405,226" FontFamily="Segoe UI" HorizontalContentAlignment="Center"/>
             <TextBox x:Name="lb_ExpenseTitle" FontSize="28" Margin="405,133,30,226" FontFamily="Segoe UI" HorizontalContentAlignment="Center"/>
-            <Button Content="Anuluj" FontSize="45" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#D91E18" Margin="30,0,0,36" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="260" BorderBrush="{x:Null}"/>
+            <Button Content="Anuluj" FontSize="45" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#D91E18" Margin="30,0,0,36" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="260" BorderBrush="{x:Null}" Click="bt_backToIndex_click"/>
         </Grid>
 
         <Grid x:Name="Page_AddRevenue" Visibility="Hidden" >
@@ -40,7 +40,7 @@
             <Label Margin="405,70,84,306" FontSize="42" Foreground="#F2F1EF" Content="Tytuł wydatku" HorizontalAlignment="Center" Width="305"/>
             <TextBox x:Name="lb_RevenuePrice" FontSize="28" Margin="30,135,405,224" FontFamily="Segoe UI" HorizontalContentAlignment="Center"/>
             <TextBox x:Name="lb_RevenueTitle" FontSize="28" Margin="405,133,30,226" FontFamily="Segoe UI" HorizontalContentAlignment="Center"/>
-            <Button Content="Anuluj" FontSize="45" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#D91E18" Margin="30,0,0,36" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="260" BorderBrush="{x:Null}"/>
+            <Button Content="Anuluj" FontSize="45" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#D91E18" Margin="30,0,0,36" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="260" BorderBrush="{x:Null}" Click="bt_backToIndex_click"/>
         </Grid>
 
         <Grid x:Name="Page_Stats" Visibility="Hidden">
@@ -77,7 +77,7 @@
                 <Label Content="442zł" Foreground="#ecf0f1" Width="120px" Height="40" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" FontSize="20" FontFamily="Segoe UI Bold"/>
                 <Label FontSize="19" Foreground="#ecf0f1" Content="łączne wydatki" />
             </WrapPanel>
-            <Button Content="Powrót" FontSize="45" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#ED5565" Margin="405,320,10,55" BorderBrush="{x:Null}" />
+            <Button Content="Powrót" FontSize="45" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#ED5565" Margin="405,320,10,55" BorderBrush="{x:Null}" Click="bt_backToIndex_click" />
 
         </Grid>
     </Grid>
