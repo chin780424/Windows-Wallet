@@ -27,9 +27,7 @@ namespace MoneyAnalizer
         private void Save()
         {
             if (lb_firstname.Text == "")
-            {
-                MessageBox.Show("Wprowadź imię!");
-            }
+                MessageBox.Show("Wprowadź imie!", "Windows Wallet Error", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
                 Properties.Settings.Default.FirstName = lb_firstname.Text;

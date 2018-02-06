@@ -29,9 +29,7 @@ namespace MoneyAnalizer
         {
             BitmapImage User = new BitmapImage();
             User.BeginInit();
-
             User.UriSource = new Uri(@"icons/user" + j + ".png", UriKind.Relative);
-
             img_avatar.Source = User;
             User.EndInit();
         }
@@ -141,13 +139,17 @@ namespace MoneyAnalizer
 
         private void bt_addExpense(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.saldo += Convert.ToInt32(lb_ExpensePrice.Text);
-            Properties.Settings.Default.lastExpense = Convert.ToInt32(lb_ExpensePrice.Text);
-            Properties.Settings.Default.sumExpense += Convert.ToInt32(lb_ExpensePrice.Text);
-            Properties.Settings.Default.cashFlow += Convert.ToInt32(lb_ExpensePrice.Text);
+            if (lb_ExpensePrice.Text!="")
+            {
+                Properties.Settings.Default.saldo += Convert.ToInt32(lb_ExpensePrice.Text);
+                Properties.Settings.Default.lastExpense = Convert.ToInt32(lb_ExpensePrice.Text);
+                Properties.Settings.Default.sumExpense += Convert.ToInt32(lb_ExpensePrice.Text);
+                Properties.Settings.Default.cashFlow += Convert.ToInt32(lb_ExpensePrice.Text);
 
-            if (Properties.Settings.Default.saldo > Properties.Settings.Default.maxSaldo)
-                Properties.Settings.Default.maxSaldo = Properties.Settings.Default.saldo;
+                if (Properties.Settings.Default.saldo > Properties.Settings.Default.maxSaldo)
+                    Properties.Settings.Default.maxSaldo = Properties.Settings.Default.saldo;
+            }
+            else MessageBox.Show("Wprowadź ilość zarobionych pieniędzy!", "Windows Wallet Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
             Properties.Settings.Default.Save();
 
@@ -157,10 +159,14 @@ namespace MoneyAnalizer
 
         private void bt_addRevenue(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.saldo -= Convert.ToInt32(lb_RevenuePrice.Text);
-            Properties.Settings.Default.lastRevenue = Convert.ToInt32(lb_RevenuePrice.Text);
-            Properties.Settings.Default.sumRevenue += Convert.ToInt32(lb_RevenuePrice.Text);
-            Properties.Settings.Default.cashFlow += Convert.ToInt32(lb_RevenuePrice.Text);
+            if (lb_RevenuePrice.Text != "")
+            {
+                Properties.Settings.Default.saldo -= Convert.ToInt32(lb_RevenuePrice.Text);
+                Properties.Settings.Default.lastRevenue = Convert.ToInt32(lb_RevenuePrice.Text);
+                Properties.Settings.Default.sumRevenue += Convert.ToInt32(lb_RevenuePrice.Text);
+                Properties.Settings.Default.cashFlow += Convert.ToInt32(lb_RevenuePrice.Text);
+            }
+            else MessageBox.Show("Wprowadź ilość wydanych pieniędzy!", "Windows Wallet Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
             Properties.Settings.Default.Save();
 

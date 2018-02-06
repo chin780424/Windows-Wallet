@@ -20,7 +20,7 @@
             <Label x:Name="lb_lastRevenue" Margin="415,127,0,266" FontSize="25" Foreground="#ecf0f1">Ostatni wydatek: 0zł</Label>
             <Grid Margin="50,35,379,276">
                 <Label x:Name="lb_FirstName" ToolTip="Kliknij, aby zmienić imię" Margin="130,10,25,65" FontSize="30" Foreground="#F2F1EF" Content="Paweł" Cursor="Hand" MouseUp="Buton_FirstNameClick"/>
-                <Image x:Name="img_avatar" ToolTip="Kliknij, aby zmienić awatar" HorizontalAlignment="Left" Height="120" VerticalAlignment="Top" Width="120" Source="icons/user_cook.png" Cursor="Hand" MouseUp="Image_MouseUp"/>
+                <Image x:Name="img_avatar" ToolTip="Kliknij, aby zmienić awatar" HorizontalAlignment="Left" Height="120" VerticalAlignment="Top" Width="120" Source="icons/user1.png" Cursor="Hand" MouseUp="Image_MouseUp"/>
                 <Label x:Name="lb_Surname" ToolTip="Kliknij, aby zminić nazwisko" Margin="130,60,15,10" FontSize="30" Foreground="#F2F1EF" Content="Czernecki" Cursor="Hand" MouseUp="Button_SurnameClick"/>
             </Grid>
         </Grid>

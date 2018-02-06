@@ -26,7 +26,7 @@ namespace MoneyAnalizer
 
         private void Save()
         {
-            if (lb_surname.Text == "") MessageBox.Show("Wprowadź nazwisko!");
+            if (lb_surname.Text == "") MessageBox.Show("Wprowadź nazwisko!", "Windows Wallet Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
             else
             {
