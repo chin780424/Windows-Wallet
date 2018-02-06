@@ -24,11 +24,28 @@ namespace MoneyAnalizer
             InitializeComponent();
         }
 
+        private void Save()
+        {
+            if (lb_firstname.Text == "")
+            {
+                MessageBox.Show("Wprowadź imię!");
+            }
+            else
+            {
+                Properties.Settings.Default.FirstName = lb_firstname.Text;
+                Properties.Settings.Default.Save();
+                this.Hide();
+            }
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.FirstName = lb_firstname.Text;
-            Properties.Settings.Default.Save();
-            this.Hide();
+            Save();
+        }
+
+        private void lb_firstname_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return) Save();
         }
     }
 }

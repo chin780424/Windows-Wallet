@@ -8,7 +8,7 @@
         Title="Zmiana nazwiska" Height="200" Width="320" Background="#FF22313F" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label FontFamily="Segoe UI" FontSize="20" Foreground="#F2F1EF" Content="Podaj swoje nazwisko:" Margin="0,6,0,119" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="lb_surname" Height="45" FontSize="28" Margin="5,45,5,80" FontFamily="Segoe UI" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="lb_surname" Height="45" FontSize="28" Margin="5,45,5,80" FontFamily="Segoe UI" HorizontalContentAlignment="Center" KeyDown="lb_surname_KeyDown"/>
         <Button Content="Zmień nazwisko" FontSize="25" FontFamily="Segoe UI Semibold" Foreground="#ecf0f1" Background="#2ECC71" Margin="5,95,5,10" Height="65" Width="305" BorderBrush="{x:Null}" Click="Button_Click"/>
     </Grid>
 </Window>

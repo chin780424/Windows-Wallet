@@ -111,6 +111,18 @@ namespace MoneyAnalizer
             refresher.Tick += new EventHandler(Timer_Tick);
             refresher.Start();
 
+            /*
+            Properties.Settings.Default.saldo = 0;
+            Properties.Settings.Default.lastExpense = 0;
+            Properties.Settings.Default.sumExpense = 0;
+            Properties.Settings.Default.cashFlow = 0;
+            Properties.Settings.Default.maxSaldo = 0;
+            Properties.Settings.Default.lastRevenue = 0;
+            Properties.Settings.Default.sumRevenue = 0;
+
+            Properties.Settings.Default.Save();
+            */
+
         }
 
         int k = 0;
