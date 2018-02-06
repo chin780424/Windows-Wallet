@@ -115,19 +115,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\user.png" />
-    <Resource Include="icons\user_accountant.png" />
-    <Resource Include="icons\user_cook.png" />
-    <Resource Include="icons\user_doctor.png" />
-    <Resource Include="icons\user_girl.png" />
-    <Resource Include="icons\user_girl2.png" />
-    <Resource Include="icons\user_grandpa.png" />
-    <Resource Include="icons\user_solider.png" />
-    <Resource Include="icons\user_thief.png" />
-    <Resource Include="icons\user_waiter.png" />
-    <Resource Include="icons\user_waiter2.png" />
-    <Resource Include="icons\user_women.png" />
-    <Resource Include="icons\user_women2.png" />
+    <Resource Include="icons\user1.png" />
+    <Resource Include="icons\user5.png" />
+    <Resource Include="icons\user6.png" />
+    <Resource Include="icons\user7.png" />
+    <Resource Include="icons\user8.png" />
+    <Resource Include="icons\user9.png" />
+    <Resource Include="icons\user10.png" />
+    <Resource Include="icons\user11.png" />
+    <Resource Include="icons\user12.png" />
+    <Resource Include="icons\user13.png" />
+    <Resource Include="icons\user3.png" />
+    <Resource Include="icons\user4.png" />
+    <Resource Include="icons\user2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
