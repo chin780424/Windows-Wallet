@@ -47,6 +47,7 @@ namespace MoneyAnalizer
             refresher.Tick += new EventHandler(Timer_Tick);
             refresher.Start();
 
+
             //BAZA DANYCH
             SQLiteConnection.CreateFile("moneyChanged.sqlite");
 
@@ -155,7 +156,7 @@ namespace MoneyAnalizer
 
         private void bt_addExpense(object sender, RoutedEventArgs e)
         {
-            if (lb_ExpensePrice.Text!="")
+            if (lb_ExpensePrice.Text != "")
             {
                 Properties.Settings.Default.saldo += Convert.ToInt32(lb_ExpensePrice.Text);
                 Properties.Settings.Default.lastExpense = Convert.ToInt32(lb_ExpensePrice.Text);
@@ -164,6 +165,8 @@ namespace MoneyAnalizer
 
                 if (Properties.Settings.Default.saldo > Properties.Settings.Default.maxSaldo)
                     Properties.Settings.Default.maxSaldo = Properties.Settings.Default.saldo;
+
+                saveExpense();
             }
             else MessageBox.Show("Wprowadź ilość zarobionych pieniędzy!", "Windows Wallet Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
@@ -181,6 +184,8 @@ namespace MoneyAnalizer
                 Properties.Settings.Default.lastRevenue = Convert.ToInt32(lb_RevenuePrice.Text);
                 Properties.Settings.Default.sumRevenue += Convert.ToInt32(lb_RevenuePrice.Text);
                 Properties.Settings.Default.cashFlow += Convert.ToInt32(lb_RevenuePrice.Text);
+
+                saveRevenue();
             }
             else MessageBox.Show("Wprowadź ilość wydanych pieniędzy!", "Windows Wallet Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
@@ -190,16 +195,39 @@ namespace MoneyAnalizer
             Page_index.Visibility = Visibility.Visible;
         }
 
-        //Zapisywanie logów do XML'a
+        //Zapisywanie logów do SQLite
 
         private void saveExpense()
         {
+            if (lb_ExpenseTitle.Text == "") lb_ExpenseTitle.Text = "-";
+
+            query = "insert into Expense (title, value) values ('" + lb_ExpenseTitle.Text + "', " + lb_ExpensePrice.Text + ")";
+
+            SQLiteConnection SaveConnection;
+            SaveConnection = new SQLiteConnection("Data Source = moneyChanged.sqlite; Version = 3;");
+            SaveConnection.Open();
+
+            SQLiteCommand save = new SQLiteCommand(query, SaveConnection);
+            save.ExecuteNonQuery();
+
+            SaveConnection.Close();
 
         }
 
         private void saveRevenue()
         {
+            if (lb_RevenueTitle.Text == "") lb_RevenueTitle.Text = "-";
 
+            query = "insert into Expense (title, value) values ('" + lb_RevenueTitle.Text + "', " + lb_RevenuePrice.Text + ")";
+
+            SQLiteConnection SaveConnection;
+            SaveConnection = new SQLiteConnection("Data Source = moneyChanged.sqlite; Version = 3;");
+            SaveConnection.Open();
+
+            SQLiteCommand save = new SQLiteCommand(query, SaveConnection);
+            save.ExecuteNonQuery();
+
+            SaveConnection.Close();
         }
     }
 }
