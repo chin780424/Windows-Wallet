@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Data.SQLite;
 
 namespace MoneyAnalizer
 {
@@ -21,7 +22,7 @@ namespace MoneyAnalizer
     /// </summary>
     public partial class MainWindow : Window
     {
-        int i = 0;
+        int i = 1; string query;
 
         DispatcherTimer refresher = new DispatcherTimer();
 
@@ -46,6 +47,24 @@ namespace MoneyAnalizer
             refresher.Tick += new EventHandler(Timer_Tick);
             refresher.Start();
 
+            //BAZA DANYCH
+            SQLiteConnection.CreateFile("moneyChanged.sqlite");
+
+            SQLiteConnection sqlLiteDataBaseConnection;
+            sqlLiteDataBaseConnection = new SQLiteConnection("Data Source=moneyChanged.sqlite;Version=3;");
+            sqlLiteDataBaseConnection.Open();
+
+            query = "CREATE TABLE Revenue (title VARCHAR(30), value INT)";
+            SQLiteCommand command = new SQLiteCommand(query, sqlLiteDataBaseConnection);
+            command.ExecuteNonQuery();
+
+            query = "CREATE TABLE Expense (title VARCHAR(30), value INT)";
+            command = new SQLiteCommand(query, sqlLiteDataBaseConnection);
+            command.ExecuteNonQuery();
+
+            sqlLiteDataBaseConnection.Close();
+
+
             /*
             Properties.Settings.Default.saldo = 0;
             Properties.Settings.Default.lastExpense = 0;
@@ -69,7 +88,7 @@ namespace MoneyAnalizer
             Properties.Settings.Default.Save();
             if (k >= 13) k = 0;
         }
-
+        
         private void Timer_Tick(object sender, EventArgs e)
         {
             i = Properties.Settings.Default.AwatarID;
@@ -89,9 +108,6 @@ namespace MoneyAnalizer
             lb_stats_saldo.Content = Properties.Settings.Default.saldo + "zł";
             lb_stats_sumExpense.Content = Properties.Settings.Default.sumExpense + "zł";
             lb_sum_sumRevenue.Content = Properties.Settings.Default.sumRevenue + "zł";
-
-
-
 
         }
 
@@ -172,6 +188,18 @@ namespace MoneyAnalizer
 
             Page_AddRevenue.Visibility = Visibility.Hidden;
             Page_index.Visibility = Visibility.Visible;
+        }
+
+        //Zapisywanie logów do XML'a
+
+        private void saveExpense()
+        {
+
+        }
+
+        private void saveRevenue()
+        {
+
         }
     }
 }
