@@ -83,14 +83,19 @@
     <Compile Include="ChangeSurname.xaml.cs">
       <DependentUpon>ChangeSurname.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FlatButton.xaml.cs">
-      <DependentUpon>FlatButton.xaml</DependentUpon>
-    </Compile>
     <Page Include="ChangeFirstName.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ChangeSurname.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="History\ExpenseHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="History\RevenueHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,14 +107,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="History\ExpenseHistory.xaml.cs">
+      <DependentUpon>ExpenseHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="History\RevenueHistory.xaml.cs">
+      <DependentUpon>RevenueHistory.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="FlatButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -152,5 +159,6 @@
     <Resource Include="icons\user4.png" />
     <Resource Include="icons\user2.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

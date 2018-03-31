@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Data.SQLite;
+using System.IO;
 
 namespace MoneyAnalizer
 {
@@ -49,21 +50,24 @@ namespace MoneyAnalizer
 
 
             //BAZA DANYCH
-            SQLiteConnection.CreateFile("moneyChanged.sqlite");
+            if (!File.Exists("moneyChanged.sqlite"))
+            {
+                SQLiteConnection.CreateFile("moneyChanged.sqlite");
 
-            SQLiteConnection sqlLiteDataBaseConnection;
-            sqlLiteDataBaseConnection = new SQLiteConnection("Data Source=moneyChanged.sqlite;Version=3;");
-            sqlLiteDataBaseConnection.Open();
+                SQLiteConnection sqlLiteDataBaseConnection;
+                sqlLiteDataBaseConnection = new SQLiteConnection("Data Source=moneyChanged.sqlite;Version=3;");
+                sqlLiteDataBaseConnection.Open();
 
-            query = "CREATE TABLE Revenue (title VARCHAR(30), value INT)";
-            SQLiteCommand command = new SQLiteCommand(query, sqlLiteDataBaseConnection);
-            command.ExecuteNonQuery();
+                query = "CREATE TABLE Revenue (Tytul VARCHAR(30), Kwota INT)";
+                SQLiteCommand command = new SQLiteCommand(query, sqlLiteDataBaseConnection);
+                command.ExecuteNonQuery();
 
-            query = "CREATE TABLE Expense (title VARCHAR(30), value INT)";
-            command = new SQLiteCommand(query, sqlLiteDataBaseConnection);
-            command.ExecuteNonQuery();
+                query = "CREATE TABLE Expense (Tytul VARCHAR(30), Kwota INT)";
+                command = new SQLiteCommand(query, sqlLiteDataBaseConnection);
+                command.ExecuteNonQuery();
 
-            sqlLiteDataBaseConnection.Close();
+                sqlLiteDataBaseConnection.Close();
+            }
 
 
             /*
@@ -77,8 +81,7 @@ namespace MoneyAnalizer
 
             Properties.Settings.Default.Save();
             */
-
-        }
+        }   
 
         int k = 0;
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
@@ -152,6 +155,18 @@ namespace MoneyAnalizer
             Page_index.Visibility = Visibility.Visible;
         }
 
+        private void bt_revenueHistory_click(object sender, RoutedEventArgs e)
+        {
+            History.RevenueHistory window = new History.RevenueHistory();
+            window.Show();
+        }
+
+        private void bt_expenseHistory_click(object sender, RoutedEventArgs e)
+        {
+            History.ExpenseHistory window = new History.ExpenseHistory();
+            window.Show();
+        }
+
         //Dodawanie i inne operacje na pieniążkach
 
         private void bt_addExpense(object sender, RoutedEventArgs e)
@@ -201,7 +216,7 @@ namespace MoneyAnalizer
         {
             if (lb_ExpenseTitle.Text == "") lb_ExpenseTitle.Text = "-";
 
-            query = "insert into Expense (title, value) values ('" + lb_ExpenseTitle.Text + "', " + lb_ExpensePrice.Text + ")";
+            query = "insert into Expense (Tytul, Kwota) values ('" + lb_ExpenseTitle.Text + "', " + lb_ExpensePrice.Text + ")";
 
             SQLiteConnection SaveConnection;
             SaveConnection = new SQLiteConnection("Data Source = moneyChanged.sqlite; Version = 3;");
@@ -218,7 +233,7 @@ namespace MoneyAnalizer
         {
             if (lb_RevenueTitle.Text == "") lb_RevenueTitle.Text = "-";
 
-            query = "insert into Expense (title, value) values ('" + lb_RevenueTitle.Text + "', " + lb_RevenuePrice.Text + ")";
+            query = "insert into Revenue (Tytul, Kwota) values ('" + lb_RevenueTitle.Text + "', " + lb_RevenuePrice.Text + ")";
 
             SQLiteConnection SaveConnection;
             SaveConnection = new SQLiteConnection("Data Source = moneyChanged.sqlite; Version = 3;");
@@ -229,5 +244,12 @@ namespace MoneyAnalizer
 
             SaveConnection.Close();
         }
+
+        private void bt_expense(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
     }
 }
